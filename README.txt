@@ -5,12 +5,16 @@ Authors: Hector Ferrada and Gonzalo Navarro hferrada@dcc.uchile.cl, gnavarro@dcc
 
 Description: This is a compressed full-text index to solve document listing. The implementation is based on the method of Ferrada and Navarro [1].  
 In that paper he uses his CSA to index the input collection. As we did not found a 64-bit version for his CSA, we have used a 64-bit version of a FMI to replace it. 
-We use the sdsl-library of S. Gog to build bitvectors (https://github.com/simongog/sdsl-lite). Then, it is necessary to install sdsl-library to run this index. In order to compute RMQs we use our own implementation, which is based on the method of Fischer and Heun [2]. For the tree representation needed in [2] we use a light version of the Range Min-Max Tree of Sadakane and Navarro [3]. This RMQ structure and also other basic functions needed in the code are in our small library called DRF_Utils64. Then you have to download it and compile it to run the index (https://github.com/hferrada/DRF_Utils64.git)
+We use the sdsl-library of S. Gog to build bitvectors (https://github.com/simongog/sdsl-lite). Then, it is necessary to install sdsl-library to run this index. 
+In order to compute RMQs we use our own implementation, which is based on the method of Fischer and Heun [2]. 
+For the tree representation needed in [2] we use a light version of the Range Min-Max Tree of Sadakane and Navarro [3]. 
+That RMQ structure and also other basic functions needed in the code are in our small library called DRF_Utils64. Then you have to download it and compile it to run the index (https://github.com/hferrada/DRF_Utils64.git)
 
 COMPILE, MAKE and LINKING
 =========================
 1.- Install sdsl-library. Download it from https://github.com/simongog/sdsl-lite and follow the specifications given there.  
-2.- Install DRF_Utils64 library. Download it from https://github.com/simongog/sdsl-lite and follow the specifications given there.  
+2.- Install DRF_Utils64 library. Download it from https://github.com/simongog/sdsl-lite and follow the 
+specifications given there.  
 3.- Edit the Makefile file included in the folder 'Sada-DLIndex' and modify the next lines:  
 
 In the line INCLUDES, you put the path of directory 'include' in where are the header files "divsufsort.h" and "divsufsort.h" and the directory sdsl with all header of the library. For example:  
