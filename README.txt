@@ -31,7 +31,8 @@ loadDL_LZ.cpp. This loads the index given the parameters included in the config 
 
 Config File example  
 ===================
-It is not necesary uses the files buildDL_Sada.cpp and loadDL_Sada.cpp to generate the binaries files. These are only examples. But, if you want to use them, then you need to modify the parameters in the config file.
+It is not necesary uses the files buildDL_Sada.cpp and loadDL_Sada.cpp to generate the binaries files.
+These are only examples. But, if you want to use them, then you need to modify the parameters in the config file.
 This is the format of that file, which includes two sections [GLOBALS] and [DL]:  
 _______________________________________________________________________________________________
 [GLOBALS]
