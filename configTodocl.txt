@@ -1,0 +1,22 @@
+[GLOBALS]
+TRACE = 0				# 0: do not list the trace, 1: list the trace
+TEST = 1					# 0: do not run the test, 1: run the test
+N_REP = 100 			# number of test and repetitions for experiments
+RUN_EXP = 1				# 0: do not run the experiments, 1: run the experiments
+MAX_M = 10				# The experiments run with initial lenght pattern, m=6, and increments this value in 4 until to reach to MAX_M
+							# The test runs length pattern from m=1,2,..,MAX_M and N_REP repetitions for each one
+[DL]
+inputFile = /home/hferrada/text_data/DR/todoCL/wbrtext0_200MB
+filesInList = 0		# 1: list of files (ome line = one file), 0: Unique file with all the documents of the collection
+lowercase = 0			# 1: change all letters to lowercase, 0: do not change
+boundSymbol = 0		# original symbol delimiter of documents when we read all documents in one file.
+cutDoc = 1				# new symbol to separate documents
+levRMQ = 100			# The first 'levRMQ' levels of Range will store RMQ structures.
+							# if (levRMQ > h) (h is the Range's height) then the code set levRMQ = h (all levels with RMQ structures)
+dirStore = /home/hferrada/drf/dl/results/DL_LZ/todocl200MB/
+							# the directory to save/load the data structure (files *.dls)
+dirResult = /home/hferrada/drf/dl/results/DL_LZ/resume/todocl_
+							# the directory to save the results of the experiments as summary files
+pattFromFile = 1		# 0: random patterns, 1: load from file (as in todoCL, then it requires fileTodoCL1W and fileTodoCL1W)
+fileTodoCL1W = /home/hferrada/text_data/DR/todoCL/queries_200MB_1W.txt # patterns of one word from this file
+fileTodoCL2W = /home/hferrada/text_data/DR/todoCL/queries_200MB_2W.txt # patterns of two words from this file
