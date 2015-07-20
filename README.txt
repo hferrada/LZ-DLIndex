@@ -8,6 +8,7 @@ In that paper he uses his CSA to index the input collection. As we did not found
 We use the sdsl-library of S. Gog to build bitvectors (https://github.com/simongog/sdsl-lite). Then, it is necessary to install sdsl-library to run this index. In order to compute RMQs we use our own implementation, which is based on the method of Fischer and Heun [2]. For the tree representation needed in [2] we use a light version of the Range Min-Max Tree of Sadakane and Navarro [3]. This RMQ structure and also other basic functions needed in the code are in our small library called DRF_Utils64. Then you have to download it and compile it to run the index (https://github.com/hferrada/DRF_Utils64.git)
 
 COMPILE, MAKE and LINKING
+=========================
 1.- Install sdsl-library. Download it from https://github.com/simongog/sdsl-lite and follow the specifications given there.  
 2.- Install DRF_Utils64 library. Download it from https://github.com/simongog/sdsl-lite and follow the specifications given there.  
 3.- Edit the Makefile file included in the folder 'Sada-DLIndex' and modify the next lines:  
@@ -23,8 +24,10 @@ Execute: "make load_binary" to generate a binary file "loadDL_Sada" from the sou
 loadDL_Sada.cpp. This loads the index given the parameters included in the config file, which is indicated in the call.  
 
 Config File example  
-It is not necesary uses the files buildDL_Sada.cpp and loadDL_Sada.cpp to generate the binaries files. These are only examples. If you use them, then you need to modify the parameters in the config file. This is the format:  
-
+===================
+It is not necesary uses the files buildDL_Sada.cpp and loadDL_Sada.cpp to generate the binaries files. These are only examples. But, if you want to use them, then you need to modify the parameters in the config file.
+This is the format of that file, which includes two sections [GLOBALS] and [DL]:  
+_______________________________________________________________________________________________
 [GLOBALS]
 TRACE = 0 # 0: do not list the trace, 1: list the trace  
 TEST = 1 # 0: do not run the test, 1: run the test  
@@ -39,7 +42,10 @@ boundSymbol = 1 # original symbol delimiter of documents when we read all docume
 cutDoc = 1 # new symbol to separate documents  
 dirStore = directory # the directory to save/load the data structure (files *.dls)  
 dirResult = directory/prefix_ # the directory/prefix to save the results of the experiments as summary files  
+_______________________________________________________________________________________________
 
-References: Please, if you want to include this tool as part of your experiments, in your references include the paper above.
+References
+==========
+Please, if you want to include this tool as part of your experiments, in your references include the paper above.
 [1] H. Ferrada and G. Navarro. A Lempel-Ziv compressed structure for document listing. 
 In Proc. SPIRE, LNCS 8214, pages 116–128, 2013.
